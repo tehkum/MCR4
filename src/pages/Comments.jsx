@@ -10,11 +10,12 @@ export default function Comments() {
     upvote: false,
     downvote: false,
   });
-  const [isBookmarked, setBookmarked] = useState(false);
+  
   const { postId } = useParams();
 
   useEffect(() => {
     setThisPost(postData.find((item) => item.postId === postId));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postId]);
 
   const upvoteHandler = (id) => {
